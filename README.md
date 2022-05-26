@@ -21,11 +21,11 @@ The [assign_tractionBC2](https://github.com/qizhang94/GEOKEYFEM_HM/blob/main/ass
 
 ## Advice
 
-The code cannot be perfect. It is highly likely that non-convergence will happen if you **change some parameters**. Another scenario that would **partially work** is WHEN there is no friction coefficient, the initial location of the rigid block is {(0.29, 1) m, (0.51, 1) m}, the total displacement is (0.3, -0.1) m, Mohr-Coulomb model is adopted, and `epsp` is 1. The PEEQ profile **cannot** match the standard FEM result.
+The code cannot be perfect. It is highly likely that non-convergence will happen if you **change some parameters**, especially when you want to push the rigid block forward. One scenario that would **partially work** is WHEN there is no friction, the initial location of the rigid block is {(0.29, 1) m, (0.51, 1) m}, the total displacement is (0.3, -0.1) m, Mohr-Coulomb model is adopted, and `epsp` is 1. The PEEQ profile **cannot** match the standard FEM result.
 
 
 ## Output
-If you type `run main_rigid_contact_prob.m` in the MATLAB command window by using default parameters, you will get the following sample output. Five figures will also be generated:
+If you type `run main_rigid_contact_prob.m` in the MATLAB command window by using default parameters, you will get the following sample output (note the residual norm does not converge to zero, which is still under investigation). Five figures will also be generated:
 - The undeformed mesh
 - The deformed mesh
 - The contour of horizontal and vertical displacements
