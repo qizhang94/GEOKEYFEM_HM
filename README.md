@@ -27,7 +27,7 @@ The code cannot be perfect. It is highly likely that non-convergence will happen
 
 
 ## Output
-If you type `run main_rigid_contact_prob.m` in the MATLAB command window by using default parameters, you will get the following sample output (note the residual norm does not converge to zero, which is still under investigation). Five figures will also be generated:
+If you type `run main_rigid_contact_prob.m` in the MATLAB command window by using default parameters, you will get the following sample output (note the *residual norm does not converge to zero, which is still under investigation*). Five figures will also be generated:
 - The undeformed mesh
 - The deformed mesh
 - The contour of horizontal and vertical displacements
