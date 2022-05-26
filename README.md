@@ -13,14 +13,14 @@ This is the [main file](./main_rigid_contact_prob.m). You can run it directly. I
 [stress_new(:, ino), SDV_new(:, ino), cto] = MohrCoulomb_UMAT(0, Props(ino,:), stress(:, ino), strain_ino_new - strain_ino_old, SDV(:, ino));
 ```
 
-This [file](./pre_assemble_BigK.m) *pre-aseembles* a **template** for the $2 \times 2$ block stiffness matrix. It makes the actual assemble [code](./assemble_system.m) more concise.
+This [file](./pre_assemble_BigK.m) *pre-aseembles* a **template** for the $2 \times 2$ block stiffness matrix. It makes the actual assemble [code](./assemble_system.m) more concise. However, it only works for constant biot coefficient/tensor and mobility, i.e., material properties cannot change with location.
 
 
-The [assign_tractionBC2](./assign_tractionBC2.m) is not used in this contact problem, while it is designed to calculate the equivalent nodal force vector $\int_{\Gamma} N^T \vec{t} \ {\rm d} A$ in FEM. The user only need to define the `traction_f` as a function of both location $x$ and time $t$ (p.s. the element wise multiplication `.*` should be adopted).
+The [assign_tractionBC2](./assign_tractionBC2.m) is not used in this contact problem, while it is designed to calculate the equivalent nodal force vector $\int_{\Gamma} N^T \vec{t} \ {\rm d} A$ in FEM. The user only need to define the `traction_f` as a function of both location $x$ and time $t$ (P.S. the element wise multiplication `.*` should be adopted).
 
 
 ## Output
-If you type `run main_rigid_contact_prob.m` in the command window by using the default parameters, you will get the following sample output. Five figures will also be generated:
+If you type `run main_rigid_contact_prob.m` in the MATLAB command window by using default parameters, you will get the following sample output. Five figures will also be generated:
 - The undeformed mesh
 - The deformed mesh
 - The contour of horizontal and vertical displacements
