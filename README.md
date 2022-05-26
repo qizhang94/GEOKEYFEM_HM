@@ -26,6 +26,7 @@ If you type `run main_rigid_contact_prob.m` in the MATLAB command window by usin
 - The contour of horizontal and vertical displacements
 - The contour of stress field $\sigma_{xx}$, $\sigma_{yy}$, $\tau_{xy}$, and $\sigma_{zz}$
 - The contour of equivalent deviatoric plastic strain
+
 An overview of the graphical result could be found in the following [Tencent document](https://docs.qq.com/doc/DZUlGcndWaVBud0NP).
 
 ```
