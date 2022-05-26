@@ -259,7 +259,7 @@ plot(seg(:,1),seg(:,2),'k-','linewidth',2);
 sgtitle('Stress tensor components, kPa');
 
 
-% Plot equivlent plastic strain with a colormap
+% Plot equivalent plastic strain with a colormap
 figure
 t5=SDV;
 snscontour(node, element,fac, u_xp,u_yp,t5','PEEQ');
