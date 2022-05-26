@@ -263,6 +263,6 @@ sgtitle('Stress tensor components, kPa');
 figure
 t5=SDV;
 snscontour(node, element,fac, u_xp,u_yp,t5','PEEQ');
-title(' Equivlent plastic strain')
+title(' Equivalent plastic strain')
 hold on
 plot(seg(:,1),seg(:,2),'k-','linewidth',2);
