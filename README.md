@@ -19,6 +19,11 @@ This [file](https://github.com/qizhang94/GEOKEYFEM_HM/blob/main/pre_assemble_Big
 The [assign_tractionBC2](https://github.com/qizhang94/GEOKEYFEM_HM/blob/main/assign_tractionBC2.m) is not used in this contact problem, while it is designed to calculate the equivalent nodal force vector $\int_{\Gamma} N^T \vec{t} \ {\rm d} A$ in FEM. The user only need to define the `traction_f` as a function of both location $x$ and time $t$ (P.S. the element wise multiplication `.*` should be adopted).
 
 
+## Advice
+
+The code cannot be perfect. It is highly likely that non-convergence will happen if you **change some parameters**. Another scenario that would ``partially work'' is WHEN there is no friction coefficient, the initial location of the rigid block is {(0.29, 1) m, (0.51, 1) m}, the total displacement is (0.3, -0.1) m, Mohr-Coulomb model is adopted, and `epsp` is 1. The PEEQ profile cannot match the standard FEM result.
+
+
 ## Output
 If you type `run main_rigid_contact_prob.m` in the MATLAB command window by using default parameters, you will get the following sample output. Five figures will also be generated:
 - The undeformed mesh
