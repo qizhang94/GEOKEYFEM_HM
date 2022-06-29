@@ -20,6 +20,8 @@ The [assign_tractionBC2](https://github.com/qizhang94/GEOKEYFEM_HM/blob/main/ass
 
 PFEM (Particle-FEM) feature has not been incorporated yet since it will affect the code structure.
 
+The new main file considers a simple 2D Mohr-Coulomb soil consolidation problem. The geometry is the same as the contact problem. The (max) strip load is 0.05 MPa applied in 100 seconds. The top surface is fully drained.
+
 
 ## Advice
 
@@ -34,7 +36,7 @@ If you type `run main_rigid_contact_prob.m` in the MATLAB command window by usin
 - The undeformed mesh
 - The deformed mesh
 - The contour of horizontal and vertical displacements
-- The contour of stress field (4 components)
+- The contour of stress field (4 components: xx, yy, zz, xy)
 - The contour of equivalent deviatoric plastic strain
 
 An overview of the graphical result could be found in the following [Tencent document](https://docs.qq.com/doc/DZUlGcndWaVBud0NP).
