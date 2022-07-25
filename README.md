@@ -31,6 +31,9 @@ The code cannot be perfect. It is highly likely that non-convergence will happen
 However, if you consider friction such as making CFRI = 0.5, the original main code will not converge from the first time step. In that case, we have found a **new** scheme for updating stiffness matrix $\boldsymbol{K}$ by accident. This is given in the second main file with name `lucky`. We CANNOT guarantee that it will work for other examples.
 
 
+The calculations of the equivalent plastic strain for D-P and M-C models are a little bit different. For D-P, it uses the deviatoric strain, while for M-C, it uses the full strain. Of course, this can be easily modified.
+
+
 ## Output
 If you type `run main_rigid_contact_prob.m` in the MATLAB command window by using default parameters, you will get the following sample output (note the *residual norm does not converge to zero, which is still under investigation*). Five figures will also be generated:
 - The undeformed mesh
