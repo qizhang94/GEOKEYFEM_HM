@@ -2,10 +2,10 @@
 The numerical simulation code of Geoinvention group (PI: Prof. Zhenyu YIN) of PolyU, mainly developed by Qi ZHANG.
 
 ## Functionality
-The code simulates a contact problem between a rigid rectangular block with a Mohr-Coulomb soil by using the penalty method (**small deformation**). The deformation equation $\sigma_{ij,j} = 0$ is discretized by using the [Smoothed Finite Element Method](https://www.taylorfrancis.com/books/mono/10.1201/EBK1439820278/smoothed-finite-element-methods-liu-nguyen-trung). The direct nodal integration on the smoothing domain is also modified to **stabilized conforming nodal integration (SCNI)**. This is reflected in this [file](https://github.com/qizhang94/GEOKEYFEM_HM/blob/main/assemble_stab.m). The theory will be available upon the paper is accepted for publication.
+The code simulates a contact problem between a rigid rectangular block with a Mohr-Coulomb soil by using the penalty method (**small deformation**). The deformation equation is discretized by using the [Smoothed Finite Element Method](https://www.taylorfrancis.com/books/mono/10.1201/EBK1439820278/smoothed-finite-element-methods-liu-nguyen-trung). The direct nodal integration on the smoothing domain is also modified to **stabilized conforming nodal integration (SCNI)**. This is reflected in this [file](https://github.com/qizhang94/GEOKEYFEM_HM/blob/main/assemble_stab.m). The theory will be available upon the paper is accepted for publication.
 
 
-Although the current example only considers the deformation field, the code is designed for hydromechanical coupling analysis (poromechanics). Therefore, the [pore pressure stabilization technique](https://doi.org/10.1016/j.cma.2008.05.015) is included. In addition, for simplicity, the biot coefficient $b$ is set to be `1` and Biot modulus $M$ is set to be `infinite`. It should be not too difficult to modify our code for a more general case by using relevant pre-defined matrices such as the `Mass matrix` $\int_{\Omega} N^T N \ {\rm d} V$ from this [file](https://github.com/qizhang94/GEOKEYFEM_HM/blob/main/pre_assemble_MassN.m).
+Although the current example only considers the deformation field, the code is designed for hydromechanical coupling analysis (poromechanics). Therefore, the [pore pressure stabilization technique](https://doi.org/10.1016/j.cma.2008.05.015) is included. In addition, for simplicity, the biot coefficient is set to be `1` and Biot modulus is set to be `infinite`. It should be not too difficult to modify our code for a more general case by using relevant pre-defined matrices such as the `Mass matrix` "integral(N^T\*N)" from this [file](https://github.com/qizhang94/GEOKEYFEM_HM/blob/main/pre_assemble_MassN.m).
 
 
 This is the [main file](https://github.com/qizhang94/GEOKEYFEM_HM/blob/main/main_rigid_contact_prob.m). You can run it directly. In the main file, the most time-consuming part is the assembly process, whose function is given in this [file](https://github.com/qizhang94/GEOKEYFEM_HM/blob/main/assemble_system.m). The [constitutive file](./MohrCoulomb_UMAT.m) is also called in the assembly process, as shown in the following code block:
@@ -13,10 +13,10 @@ This is the [main file](https://github.com/qizhang94/GEOKEYFEM_HM/blob/main/main
 [stress_new(:, ino), SDV_new(:, ino), cto] = MohrCoulomb_UMAT(0, Props(ino,:), stress(:, ino), strain_ino_new - strain_ino_old, SDV(:, ino));
 ```
 
-This [file](https://github.com/qizhang94/GEOKEYFEM_HM/blob/main/pre_assemble_BigK.m) *pre-aseembles* a **template** for the $2 \times 2$ block stiffness matrix. It makes the actual assemble [code](https://github.com/qizhang94/GEOKEYFEM_HM/blob/main/assemble_system.m) more concise. However, it only works for constant biot coefficient/tensor and mobility, i.e., some material properties will not change with $\vec{x}$.
+This [file](https://github.com/qizhang94/GEOKEYFEM_HM/blob/main/pre_assemble_BigK.m) *pre-aseembles* a **template** for the 2 by 2 block stiffness matrix. It makes the actual assemble [code](https://github.com/qizhang94/GEOKEYFEM_HM/blob/main/assemble_system.m) more concise. However, it only works for constant biot coefficient/tensor and mobility, i.e., some material properties will not change with (x,y,z).
 
 
-The [assign_tractionBC2](https://github.com/qizhang94/GEOKEYFEM_HM/blob/main/assign_tractionBC2.m) is not used in this contact problem, while it is designed to calculate the equivalent nodal force vector $\int_{\Gamma} N^T \vec{t} \ {\rm d} A$ in FEM. The user only need to define the `traction_f` as a function of both location $x$ and time $t$ (P.S. the element wise multiplication `.*` should be adopted).
+The [assign_tractionBC2](https://github.com/qizhang94/GEOKEYFEM_HM/blob/main/assign_tractionBC2.m) is not used in this contact problem, while it is designed to calculate the equivalent nodal force vector "integral(N^T\*traction)" in FEM. The user only need to define the `traction_f` as a function of (x,y,z,time) (P.S. the element wise multiplication `.*` should be adopted).
 
 PFEM (Particle-FEM) feature has not been incorporated yet since it will affect the code structure.
 
@@ -28,7 +28,7 @@ The new main file considers a simple 2D Mohr-Coulomb soil consolidation problem.
 The code cannot be perfect. It is highly likely that non-convergence will happen if you **change some parameters**, especially when you want to push the rigid block forward. One scenario that would **partially work** is WHEN there is no friction, the initial location of the rigid block is {(0.29, 1) m, (0.51, 1) m}, the total displacement (10 time steps) is (0.3, -0.1) m, mesh size is 0.025 m, Mohr-Coulomb model is adopted, and `epsp` is 1. The PEEQ profile **cannot** match the standard FEM result.
 
 
-However, if you consider friction such as making CFRI = 0.5, the original main code will not converge from the first time step. In that case, we have found a **new** scheme for updating stiffness matrix $\boldsymbol{K}$ by accident. This is given in the second main file with name `lucky`. We CANNOT guarantee that it will work for other examples.
+However, if you consider friction such as making CFRI = 0.5, the original main code will not converge from the first time step. In that case, we have found a **new** scheme for updating stiffness matrix "by accident". This is given in the second main file with name `lucky`. We CANNOT guarantee that it will work for other examples.
 
 
 The calculations of the equivalent plastic strain for D-P and M-C models are a little bit different. For D-P, it uses the deviatoric strain, while for M-C, it uses the full strain. Of course, this can be easily modified.
