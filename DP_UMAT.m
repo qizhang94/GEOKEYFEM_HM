@@ -42,7 +42,7 @@ else
     nhat = [nhat_tensor(1,1); nhat_tensor(2,2); nhat_tensor(3,3); nhat_tensor(1,2); nhat_tensor(1,3); nhat_tensor(2,3)];
     delta_plastic = (sqrt(2/3)*q_trial + B*p_trial - A)/(2*mu + B*K*b);
     STRESS = stress_trial - delta_plastic*(K*b*one_voigt + 2*mu*nhat);
-    hsv = hsv0 + sqrt(2/3)*delta_plastic*norm(nhat_tensor, 'fro'); % deviatoric strain!
+    hsv = hsv0 + sqrt(2/3)*delta_plastic; % deviatoric strain! Note that norm(nhat_tensor, 'fro') = 1
     DDSDDE = Ce - (K*b*one_voigt + 2*mu*nhat)*...
         transpose(K*B*one_voigt + 2*mu*nhat)/(2*mu + B*K*b)...
         - 4*mu^2*delta_plastic/norm(stress_dev_trial, 'fro')*(I4 - 1/3*(one_voigt*one_voigt') - nhat*nhat');
