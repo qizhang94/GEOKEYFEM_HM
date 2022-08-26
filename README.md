@@ -16,7 +16,7 @@ This is the [main file](https://github.com/qizhang94/GEOKEYFEM_HM/blob/main/main
 This [file](https://github.com/qizhang94/GEOKEYFEM_HM/blob/main/pre_assemble_BigK.m) *pre-aseembles* a **template** for the 2 by 2 block stiffness matrix. It makes the actual assemble [code](https://github.com/qizhang94/GEOKEYFEM_HM/blob/main/assemble_system.m) more concise. However, it only works for constant biot coefficient/tensor and mobility, i.e., some material properties will not change with (x,y,z).
 
 
-The [assign_tractionBC2](https://github.com/qizhang94/GEOKEYFEM_HM/blob/main/assign_tractionBC2.m) is not used in this contact problem, while it is designed to calculate the equivalent nodal force vector "integral(N^T\*traction)" in FEM. The user only need to define the `traction_f` as a function of (x,y,z,time) (P.S. the element wise multiplication `.*` should be adopted).
+The [assign_tractionBC2](https://github.com/qizhang94/GEOKEYFEM_HM/blob/main/assign_tractionBC2.m) is not used in this contact problem, while it is designed to calculate the equivalent nodal force vector "integral_line(N^T\*traction)" in FEM. The user only need to define the `traction_f` as a function of (x,y,z,time) (P.S. the element wise multiplication `.*` should be adopted).
 
 PFEM (Particle-FEM) feature has not been incorporated yet since it will affect the code structure.
 
