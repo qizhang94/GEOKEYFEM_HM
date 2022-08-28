@@ -7,7 +7,7 @@ clear; clearvars -global; clc; close all;
 global ele_nods gcoord nnode nnel nel
 global ndof ndofp bcdof bcval_incr g_const
 format short;
-addpath('.\SFEM_basic\');
+addpath('./SFEM_basic/');
 
 %% Geometry
 geoheight=1;  % meter
