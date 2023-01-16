@@ -1,6 +1,8 @@
 # GEOKEYFEM_HM
 The numerical simulation code of Geoinvention group (PI: Prof. Zhenyu YIN) of PolyU, mainly developed by [Qi ZHANG](https://qizhang94.github.io/).
 
+**ALERT!** Please DON'T used the M-C UMAT code for 3D, it will NEVER work! There are still many bugs!
+
 ## Functionality
 The code simulates a contact problem between a rigid rectangular block with a Mohr-Coulomb soil by using the penalty method (**small deformation**). The deformation equation is discretized by using the [Smoothed Finite Element Method](https://www.taylorfrancis.com/books/mono/10.1201/EBK1439820278/smoothed-finite-element-methods-liu-nguyen-trung). The direct nodal integration on the smoothing domain is also modified to **stabilized conforming nodal integration (SCNI)**. This is reflected in this [file](https://github.com/qizhang94/GEOKEYFEM_HM/blob/main/assemble_stab.m). The theory will be available upon the paper is accepted for publication.
 
@@ -31,7 +33,7 @@ The code cannot be perfect. It is highly likely that non-convergence will happen
 However, if you consider friction such as making CFRI = 0.5, the original main code will not converge from the first time step. In that case, we have found a **new** scheme for updating stiffness matrix "by accident". This is given in the second main file with name `lucky`. We CANNOT guarantee that it will work for other examples.
 
 
-The calculations of the equivalent plastic strain for D-P and M-C models are a little bit different. For D-P, it uses the deviatoric strain, while for M-C, it uses the full strain. Of course, this can be easily **modified by replacing `DPE_eq` with `depsp_d`**.
+The calculations of the equivalent plastic strain for D-P and M-C models are based on the deviatoric strain: **`depsp_d`**.
 
 
 ## Output

@@ -57,7 +57,7 @@ STRESS = [SigC; 0; 0];
 [depsp_v, depsp_d]=strain_invariant(DelStrainPlas,nsigma);
 % hsv(1)  = region;	          % ! type of stress return
 % hsv(17) = hsv(17)+depsp_v;    % ! Equivalent plastic strain increment
-hsv = hsv+DPE_eq;     % ! Total equivalent plastic strain
+hsv = hsv+depsp_d;     % ! Total equivalent plastic strain
 %% return the DDSDDE consistent constitutive matrix
 DDSDDE(1,1)=Depc(1,1);
 DDSDDE(2,2)=Depc(2,2);
