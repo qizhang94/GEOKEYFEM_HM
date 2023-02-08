@@ -3,7 +3,7 @@ The numerical simulation code of Geoinvention group (PI: Prof. Zhenyu YIN) of Po
 
 **ALERT! ALERT! ALERT!** Please **DON'T** used the M-C UMAT code for **3D**, it will **NEVER WORK**! There are still many bugs! If you have to try 3D, modify the D-P UMAT code!
 
-## Irregular Updates
+## Irregular updates
 [A benchmark example](https://github.com/qizhang94/GEOKEYFEM_HM/blob/main/main_2d_prandtl.m) that concerns the bearing capacity of foundation soil was added on 02/08/2023. The NS-FEM result could match perfectly with the Prandtl solution. The surface of discontinuity was also qualitatively correct. **Change the UMAT file in the assemble function**.
 
 ## Functionality
@@ -105,3 +105,7 @@ LOAD STEP = 10; TIME = 86.40:
 	 NEWTON = 8; ERROR = 1.5108E-03; RES = 2.4321E-04
 	 NEWTON = 9; ERROR = 7.1468E-04; RES = 2.4318E-04
 ```
+
+## To do list
+- Divide the contact surface into many small segments to see the effectiveness.
+- Consider objective stress rate
