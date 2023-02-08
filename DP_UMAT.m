@@ -19,6 +19,10 @@ K = E/3/(1-2*nu);
 
 [Ce,~]=DlinElas(E,nu,6);
 
+% A = 2*sqrt(6)*coh*cos(phi)/(3 - sin(phi)); % Pass through the compression corner
+% B = 2*sqrt(6)*sin(phi)/(3 - sin(phi));
+% b = 2*sqrt(6)*sin(psi)/(3 - sin(psi));
+
 A = 3*sqrt(2)*coh*cos(phi)/sqrt(9+3*(sin(phi))^2);
 B = 3*sqrt(2)*sin(phi)/sqrt(9+3*(sin(phi))^2);
 b = 3*sqrt(2)*sin(psi)/sqrt(9+3*(sin(psi))^2);
