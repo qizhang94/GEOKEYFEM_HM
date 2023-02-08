@@ -109,3 +109,4 @@ LOAD STEP = 10; TIME = 86.40:
 ## To do list
 - Divide the contact surface into many small segments to see the effectiveness.
 - Consider objective stress rate.
+- Re-meshing strategy for large deformation simulation.
