@@ -1,5 +1,5 @@
 # GEOKEYFEM_HM
-The numerical simulation code of Geoinvention group (PI: Prof. Zhenyu YIN) of PolyU, mainly developed by [Qi ZHANG](https://qizhang94.github.io/).
+The numerical simulation code of [Qi ZHANG](https://qizhang94.github.io/). This work was supported by the RGC Postdoctoral Fellowship Scheme (RGC Ref. No. PDFS2223-5S04) and Start-up Fund for RAPs under the Strategic Hiring Scheme (Grant No. P0043879).
 
 **ALERT! ALERT! ALERT!** Please **DON'T** used the M-C UMAT code for **3D**, it will **NEVER WORK**! There are still many bugs! If you have to try 3D, modify the D-P UMAT code!
 
