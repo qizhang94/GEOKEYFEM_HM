@@ -48,7 +48,7 @@ If you type `run main_rigid_contact_prob.m` in the MATLAB command window by usin
 - The undeformed mesh
 - The deformed mesh
 - The contour of horizontal and vertical displacements
-- The contour of stress field (4 components: xx, yy, zz, xy)
+- The contour of (effective) stress field (4 components: xx, yy, zz, xy)
 - The contour of equivalent deviatoric plastic strain
 
 An overview of the graphical result could be found in the following [Tencent document](https://docs.qq.com/doc/DZUlGcndWaVBud0NP).
