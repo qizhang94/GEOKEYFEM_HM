@@ -6,7 +6,7 @@ The numerical simulation code of [Qi ZHANG](https://qizhang94.github.io/). This 
 ## Irregular updates
 [A benchmark example](https://github.com/qizhang94/GEOKEYFEM_HM/blob/main/main_2d_prandtl.m) that concerns the bearing capacity of foundation soil was added on 02/08/2023 (mm/dd/yyyy). The NS-FEM result could match perfectly with the Prandtl solution. The surface of discontinuity was also qualitatively correct. **Change the UMAT file (to D-P) in the assemble function**.
 
-[Another example](https://github.com/qizhang94/GEOKEYFEM_HM/blob/main/main_2d_Sloan_case.m) that tries to reproduce one case from the following paper was added on 06/03/2023 (mm/dd/yyyy). In order to match the reference result, the stabilization (tunning) parameter should be altered (a value of 1 would lead to inconsistent result). However, the **effective stress** distribution has some spurious oscillations. By default, Mohr-Coulomb law is used.
+[Another example](https://github.com/qizhang94/GEOKEYFEM_HM/blob/main/main_2d_Sloan_case.m) that tries to reproduce one case from the following paper was added on 06/03/2023 (mm/dd/yyyy). In order to match the reference result, the stabilization (tunning) parameter should be altered (a value of 1 would lead to inconsistent result). However, the **effective stress** distribution has some spurious oscillations, which is the weakness of SNS-FEM compared to standard FEM. By default, Mohr-Coulomb law is used.
 
 *Sloan, S.W. and Abbo, A.J. (1999), Biot consolidation analysis with automatic time stepping and error control Part 2: applications. Int. J. Numer. Anal. Meth. Geomech., 23: 493-529.*
 
