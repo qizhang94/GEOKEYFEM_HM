@@ -4,7 +4,11 @@ The numerical simulation code of [Qi ZHANG](https://qizhang94.github.io/). This 
 **ALERT! ALERT! ALERT!** Please **DON'T** used the M-C UMAT code for **3D**, it will **NEVER WORK**! There are still many bugs! If you have to try 3D, modify the D-P UMAT code!
 
 ## Irregular updates
-[A benchmark example](https://github.com/qizhang94/GEOKEYFEM_HM/blob/main/main_2d_prandtl.m) that concerns the bearing capacity of foundation soil was added on 02/08/2023. The NS-FEM result could match perfectly with the Prandtl solution. The surface of discontinuity was also qualitatively correct. **Change the UMAT file in the assemble function**.
+[A benchmark example](https://github.com/qizhang94/GEOKEYFEM_HM/blob/main/main_2d_prandtl.m) that concerns the bearing capacity of foundation soil was added on 02/08/2023 (mm/dd/yyyy). The NS-FEM result could match perfectly with the Prandtl solution. The surface of discontinuity was also qualitatively correct. **Change the UMAT file (to D-P) in the assemble function**.
+
+[Another example](https://github.com/qizhang94/GEOKEYFEM_HM/blob/main/main_2d_Sloan_case.m) that tries to reproduce one case from the following paper was added on 06/03/2023 (mm/dd/yyyy). In order to match the reference result, the stabilization (tunning) parameter should be altered (a value of 1 would lead to inconsistent result). However, the **effective stress** distribution has some spurious oscillations. By default, Mohr-Coulomb law is used.
+
+*Sloan, S.W. and Abbo, A.J. (1999), Biot consolidation analysis with automatic time stepping and error control Part 2: applications. Int. J. Numer. Anal. Meth. Geomech., 23: 493-529.*
 
 ## Functionality
 The code simulates a contact problem between a rigid rectangular block with a Mohr-Coulomb soil by using the penalty method (**small deformation**). The deformation equation is discretized by using the [Smoothed Finite Element Method](https://www.taylorfrancis.com/books/mono/10.1201/EBK1439820278/smoothed-finite-element-methods-liu-nguyen-trung). The direct nodal integration on the smoothing domain is also modified to **stabilized conforming nodal integration (SCNI)**. This is reflected in this [file](https://github.com/qizhang94/GEOKEYFEM_HM/blob/main/assemble_stab.m). The theory will be available upon the paper is accepted for publication.
