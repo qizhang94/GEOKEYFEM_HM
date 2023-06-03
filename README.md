@@ -110,7 +110,7 @@ LOAD STEP = 10; TIME = 86.40:
 	 NEWTON = 9; ERROR = 7.1468E-04; RES = 2.4318E-04
 ```
 
-Sample output from MATLAB command window of the Sloan case.
+Sample output from MATLAB command window of the Sloan and Abbo (1999) case.
 
 ```
 LOAD STEP = 1; TIME = 54912.00:
