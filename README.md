@@ -401,7 +401,7 @@ LOAD STEP = 30; TIME = 1647360.00:
 
 ## Important computer folders
 - E:\Postdoc_PolyU\Coder_MEX\GEOKEYFEM_HM (Github repo)
-- C:\Users\zq112\OneDrive\REMOTE_SYNC\F\CSE583_Analytical and Numerical Methods in Geotechnical Engineering (Useful functions such as the anisotropic elasticity or EVP or isotropic function)
+- C:\Users\zq112\OneDrive\REMOTE_SYNC\F\CSE583_Analytical and Numerical Methods in Geotechnical Engineering (Useful functions such as the *anisotropic elasticity* or *EVP* or *isotropic function*)
 - C:\Users\zq112\OneDrive\REMOTE_SYNC\E\Postdoc_PolyU\Shale_gas_on_2022_not_published
 - C:\Users\zq112\Desktop\kapp_paper (Under review work)
 - C:\Users\zq112\OneDrive\REMOTE_SYNC\Nonlinear FEA & C. Linder
@@ -410,3 +410,6 @@ LOAD STEP = 30; TIME = 1647360.00:
 - C:\Users\zq112\Desktop\SNS-FEM-MCC-NEW3 (MCC + large deformation remesh)
 - C:\Users\zq112\Desktop\ (COMSOL notes)
 - C:\Users\zq112\OneDrive\REMOTE_SYNC\E\Postdoc_PolyU\Zeyu_WANG\FEMCON_T3T36 (Standard FEM)
+- C:\Users\zq112\Desktop\1D_hydrate\reproduce_Klar.m
+- C:\Users\zq112\Desktop\1D_hydrate\plot_compare.m
+- C:\Users\CEE\Desktop\1D_hydrate\main_solve_thermo_Masuda2_true_sequential.m (Remote desktop)
