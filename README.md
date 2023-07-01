@@ -54,7 +54,7 @@ If you type `run main_rigid_contact_prob.m` in the MATLAB command window by usin
 - The contour of (effective) stress field (4 components: xx, yy, zz, xy)
 - The contour of equivalent deviatoric plastic strain
 
-An overview of the graphical result could be found in the following [Tencent document](https://docs.qq.com/doc/DZUlGcndWaVBud0NP).
+An overview of the graphical result (**NOT reference result!**) could be found in the following [Tencent document](https://docs.qq.com/doc/DZUlGcndWaVBud0NP).
 
 ```
 LOAD STEP = 1; TIME = 8.64:
@@ -396,5 +396,17 @@ LOAD STEP = 30; TIME = 1647360.00:
 
 ## To do list
 - Divide the contact surface into many small segments to see the effectiveness.
-- Consider objective stress rate.
+- Consider objective stress rate (by spin tensor **w**).
 - Re-meshing strategy for large deformation simulation.
+
+## Important computer folders
+- E:\Postdoc_PolyU\Coder_MEX\GEOKEYFEM_HM (Github repo)
+- C:\Users\zq112\OneDrive\REMOTE_SYNC\F\CSE583_Analytical and Numerical Methods in Geotechnical Engineering (Useful functions such as the anisotropic elasticity or EVP or isotropic function)
+- C:\Users\zq112\OneDrive\REMOTE_SYNC\E\Postdoc_PolyU\Shale_gas_on_2022_not_published
+- C:\Users\zq112\Desktop\kapp_paper (Under review work)
+- C:\Users\zq112\OneDrive\REMOTE_SYNC\Nonlinear FEA & C. Linder
+- C:\Users\zq112\OneDrive\REMOTE_SYNC\E\Postdoc_PolyU\NFEA
+- C:\Users\zq112\OneDrive\REMOTE_SYNC\E\Postdoc_PolyU\NFEA\T3_Solid_To_ZQ
+- C:\Users\zq112\Desktop\SNS-FEM-MCC-NEW3 (MCC + large deformation remesh)
+- C:\Users\zq112\Desktop\ (COMSOL notes)
+- C:\Users\zq112\OneDrive\REMOTE_SYNC\E\Postdoc_PolyU\Zeyu_WANG\FEMCON_T3T36 (Standard FEM)
