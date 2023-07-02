@@ -413,3 +413,4 @@ LOAD STEP = 30; TIME = 1647360.00:
 - C:\Users\zq112\Desktop\1D_hydrate\reproduce_Klar.m
 - C:\Users\zq112\Desktop\1D_hydrate\plot_compare.m
 - C:\Users\CEE\Desktop\1D_hydrate\main_solve_thermo_Masuda2_true_sequential.m (Remote desktop)
+- E:\Numerical simulation\COMSOL_NEWsimulations\Zhang2021_CMAT_2nd_example.mph (Published paper that uses COMSOL)
