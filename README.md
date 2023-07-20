@@ -403,7 +403,8 @@ LOAD STEP = 30; TIME = 1647360.00:
 - E:\Postdoc_PolyU\Coder_MEX\GEOKEYFEM_HM (Github repo)
 - C:\Users\zq112\OneDrive\REMOTE_SYNC\F\CSE583_Analytical and Numerical Methods in Geotechnical Engineering (Useful functions such as the *anisotropic elasticity* or *EVP* or *isotropic function*)
 - C:\Users\zq112\OneDrive\REMOTE_SYNC\E\Postdoc_PolyU\Shale_gas_on_2022_not_published
-- C:\Users\zq112\Desktop\kapp_paper (Under review work)
+- C:\Users\CEE\Desktop\3D_reservoir_COMSOL (Remote desktop)
+- C:\Users\zq112\Desktop\kapp_paper & C:\Users\CEE\Desktop\kapp (Remote desktop) (Under review work)
 - C:\Users\zq112\OneDrive\REMOTE_SYNC\Nonlinear FEA & C. Linder
 - C:\Users\zq112\OneDrive\REMOTE_SYNC\E\Postdoc_PolyU\NFEA
 - C:\Users\zq112\OneDrive\REMOTE_SYNC\E\Postdoc_PolyU\NFEA\T3_Solid_To_ZQ
