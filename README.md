@@ -400,22 +400,36 @@ LOAD STEP = 30; TIME = 1647360.00:
 - Re-meshing strategy for large deformation simulation.
 
 ## Important computer folders
-
 By default, computer folders are based on the LG laptop.
 
+#### Key
+- C:\Users\zq112\Desktop\ (COMSOL notes)
+- E:\Numerical simulation\COMSOL_NEWsimulations\Zhang2021_CMAT_2nd_example.mph (Published paper that uses COMSOL)
 - E:\Postdoc_PolyU\Coder_MEX\GEOKEYFEM_HM (Github repo)
 - C:\Users\zq112\OneDrive\REMOTE_SYNC\F\CSE583_Analytical and Numerical Methods in Geotechnical Engineering (Useful functions such as the *anisotropic elasticity* or *EVP* or *isotropic function*)
-- C:\Users\zq112\OneDrive\REMOTE_SYNC\E\Postdoc_PolyU\Shale_gas_on_2022_not_published (contains 2D COMSOL example)
-- C:\Users\CEE\Desktop\3D_reservoir_COMSOL (Remote desktop)
-- C:\Users\zq112\Desktop\kapp_paper & C:\Users\CEE\Desktop\kapp (Remote desktop) (Under review work)
+
+#### On-going paper and revision
+- C:\Users\CEE\Desktop\kapp\main_test_validate_coal_Aug08.m + main_test_for_COMSOL.m (Remote computer)
+- C:\Users\CEE\Desktop\kapp\New_simulations\Gas_transfer_PLA_ksdiff(surf_dif)_perm_bedding_BN=BP_add_newadsorption_PLASTIC.mph (Remote computer)
+
+- C:\Users\zq112\OneDrive\REMOTE_SYNC\E\Postdoc_PolyU\Shale_gas_on_2022_not_published\Verification\New_case_anisotropy_3D.mph (For verification)
+- C:\Users\zq112\OneDrive\REMOTE_SYNC\E\Postdoc_PolyU\Shale_gas_on_2022_not_published\POROELASTIC_CONSTANTS.xlsx
+- C:\Users\zq112\OneDrive\REMOTE_SYNC\E\Postdoc_PolyU\Shale_gas_on_2022_not_published\Revised_results.ai
+- C:\Users\CEE\Desktop\3D_reservoir_COMSOL (Remote computer, see Excel subfolder)
+- Verification_3D1_anisotropic_horizontal_!!!!!!!!!!!!!!!!!!!!!_IMPORTANT.mph on the Desktop folder of the remote computer
+
+#### Finite strain solid mechanics
 - C:\Users\zq112\OneDrive\REMOTE_SYNC\Nonlinear FEA & C. Linder
 - C:\Users\zq112\OneDrive\REMOTE_SYNC\E\Postdoc_PolyU\NFEA
 - C:\Users\zq112\OneDrive\REMOTE_SYNC\E\Postdoc_PolyU\NFEA\T3_Solid_To_ZQ
+
+#### Group
 - C:\Users\zq112\Desktop\SNS-FEM-MCC-NEW3 (MCC + large deformation remesh)
-- C:\Users\zq112\Desktop\ (COMSOL notes)
 - C:\Users\zq112\OneDrive\REMOTE_SYNC\E\Postdoc_PolyU\Zeyu_WANG\FEMCON_T3T36 (Standard FEM)
+
+#### Hydrate
 - C:\Users\zq112\Desktop\1D_hydrate\reproduce_Klar.m
 - C:\Users\zq112\Desktop\1D_hydrate\plot_compare.m
-- C:\Users\CEE\Desktop\1D_hydrate\main_solve_thermo_Masuda2_true_sequential.m (Remote desktop)
+- C:\Users\CEE\Desktop\1D_hydrate\main_solve_thermo_Masuda2_true_sequential.m (Remote computer)
 - C:\Users\zq112\OneDrive\REMOTE_SYNC\F\CSE583_Analytical and Numerical Methods in Geotechnical Engineering\DP_drained_or_undrained (optional)\CDtest_Hydrate_Sh.m
-- E:\Numerical simulation\COMSOL_NEWsimulations\Zhang2021_CMAT_2nd_example.mph (Published paper that uses COMSOL)
+
