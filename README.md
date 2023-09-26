@@ -411,6 +411,8 @@ By default, computer folders are based on the LG laptop.
 #### On-going paper and revision
 - C:\Users\CEE\Desktop\kapp\main_test_validate_coal_Aug08.m + main_test_for_COMSOL.m (Remote computer)
 - C:\Users\CEE\Desktop\kapp\New_simulations\Gas_transfer_PLA_ksdiff(surf_dif)_perm_bedding_BN=BP_add_newadsorption_PLASTIC.mph (Remote computer)
+- C:\Users\zq112\Desktop\gas_adsorption.m (ASUS Gaming Laptop) (Compare absorbed mass functions)
+
 
 - C:\Users\zq112\OneDrive\REMOTE_SYNC\E\Postdoc_PolyU\Shale_gas_on_2022_not_published\Verification\New_case_anisotropy_3D.mph (For verification)
 - C:\Users\zq112\OneDrive\REMOTE_SYNC\E\Postdoc_PolyU\Shale_gas_on_2022_not_published\POROELASTIC_CONSTANTS.xlsx
@@ -432,4 +434,3 @@ By default, computer folders are based on the LG laptop.
 - C:\Users\zq112\Desktop\1D_hydrate\plot_compare.m
 - C:\Users\CEE\Desktop\1D_hydrate\main_solve_thermo_Masuda2_true_sequential.m (Remote computer)
 - C:\Users\zq112\OneDrive\REMOTE_SYNC\F\CSE583_Analytical and Numerical Methods in Geotechnical Engineering\DP_drained_or_undrained (optional)\CDtest_Hydrate_Sh.m
-- C:\Users\zq112\Desktop\gas_adsorption.m (ASUS Gaming Laptop) (Compare absorbed mass functions)
