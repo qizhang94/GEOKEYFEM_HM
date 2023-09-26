@@ -432,4 +432,4 @@ By default, computer folders are based on the LG laptop.
 - C:\Users\zq112\Desktop\1D_hydrate\plot_compare.m
 - C:\Users\CEE\Desktop\1D_hydrate\main_solve_thermo_Masuda2_true_sequential.m (Remote computer)
 - C:\Users\zq112\OneDrive\REMOTE_SYNC\F\CSE583_Analytical and Numerical Methods in Geotechnical Engineering\DP_drained_or_undrained (optional)\CDtest_Hydrate_Sh.m
-
+- C:\Users\zq112\Desktop\gas_adsorption.m (ASUS Gaming Laptop) (Compare absorbed mass functions)
