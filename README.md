@@ -3,7 +3,7 @@ The numerical simulation code of [Qi ZHANG](https://qizhang94.github.io/). This 
 
 **ALERT! ALERT! ALERT!** Please **DON'T** used the M-C UMAT code for **3D**, it will **NEVER WORK**! There are still many bugs! If you have to try 3D, modify the D-P UMAT code!
 
-[Buckley–Leverett Displacement](https://gitee.com/qzhang94/fem-for-buckley-leverett-displacement.git)
+[Buckley–Leverett Displacement](https://gitee.com/qzhang94/fem-for-buckley-leverett-displacement.git){:target="_blank"}
 
 ## Irregular updates
 [A benchmark example](https://github.com/qizhang94/GEOKEYFEM_HM/blob/main/main_2d_prandtl.m) that concerns the bearing capacity of foundation soil was added on 02/08/2023 (mm/dd/yyyy). The NS-FEM result could match perfectly with the Prandtl solution. The surface of discontinuity was also qualitatively correct. **Change the UMAT file (to D-P) in the assemble function**.
