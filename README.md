@@ -422,7 +422,7 @@ By default, computer folders are based on the LG laptop.
 - C:\Users\zq112\OneDrive\REMOTE_SYNC\E\Postdoc_PolyU\Shale_gas_on_2022_not_published\POROELASTIC_CONSTANTS.xlsx
 - C:\Users\zq112\OneDrive\REMOTE_SYNC\E\Postdoc_PolyU\Shale_gas_on_2022_not_published\Revised_results.ai
 - C:\Users\CEE\Desktop\3D_reservoir_COMSOL (Remote computer, see Excel subfolder)
-- Verification_3D1_anisotropic_horizontal_!!!!!!!!!!!!!!!!!!!!!_IMPORTANT.mph on the Desktop folder of the remote computer
+- Verification_3D1_ANISOTROPIC_horizontal_!!!!!!!!!!!!!!!!!!!!!_IMPORTANT.mph on the Desktop folder of the remote computer
 
 #### Finite strain solid mechanics
 - C:\Users\zq112\OneDrive\REMOTE_SYNC\Nonlinear FEA & C. Linder
