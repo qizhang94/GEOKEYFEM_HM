@@ -74,7 +74,6 @@ traction_f = @(x,t)(-(F_surcharge +...
     press_burden*(x<=foot).*(t > 0)*(t/t_crit)*(t<=t_crit) + press_burden*(x<=foot).*(t>t_crit)));  % "-" means compression
 
 
-
 watch.dt = [10*ones(1,10), 10*(1.5.^(1:1:10))];   % time STEP INTERVAL
 watch.now = 0; % start
 bcval_incr = sparse(length(watch.dt), length(bcdof));

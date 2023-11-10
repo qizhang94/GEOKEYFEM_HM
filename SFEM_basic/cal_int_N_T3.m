@@ -13,7 +13,7 @@ x_gauss = [-sqrt(3)/3; sqrt(3)/3; sqrt(3)/3; -sqrt(3)/3];
 y_gauss = [-sqrt(3)/3; -sqrt(3)/3; sqrt(3)/3; sqrt(3)/3];
 weight = ones(4,1);
 
-nnel = 4;  % Number of nodes per element
+nnel = 4;  % Number of nodes per element (here, "element" is just a sub-smoothing domain, which is a quadrilateral)
 
 for i = 1:4   % here "4" is not nnel, but the number of Gauss integration points
     % One gauss integration point in the real domain
@@ -37,3 +37,5 @@ int_N = int_N + weight(i) * [N1, N2, N3]*detJ;
 end
 
 % The difficulty is too find the vertices of the sub-smoothing domain
+
+end
