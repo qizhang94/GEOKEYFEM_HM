@@ -13,7 +13,8 @@ The numerical simulation code of [Qi ZHANG](https://qizhang94.github.io/). This 
 *Sloan, S.W. and Abbo, A.J. (1999), Biot consolidation analysis with automatic time stepping and error control Part 2: applications. Int. J. Numer. Anal. Meth. Geomech., 23: 493-529.*
 
 ```diff
-! A new folder has been created, which describes how to incorporate gas compressibility into hydro-mechanical coupling FEM.
+! A new folder has been created,
+! which describes how to incorporate gas compressibility into hydro-mechanical coupling FEM.
 + The folder contains an assembly function, a constitutive model for transversely isotropic geomaterial,
 + one verification example, and one application example.
 @@ To run the example, you need to move all the three files to the main folder. @@
