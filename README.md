@@ -12,6 +12,8 @@ The numerical simulation code of [Qi ZHANG](https://qizhang94.github.io/). This 
 
 *Sloan, S.W. and Abbo, A.J. (1999), Biot consolidation analysis with automatic time stepping and error control Part 2: applications. Int. J. Numer. Anal. Meth. Geomech., 23: 493-529.*
 
+**A new folder** has been created, which describes how to incorporate gas compressibility into hydro-mechanical coupling finite element framework. The folder contains an assembly function, a constitutive model for transversely isotropic geomaterial, one verification example, and one application example. To run the example, you need to move all the three files to the **main folder**.
+
 ### Reflection
 In a nutshell, trade-off among **computational efficiency** (Highest: T6 FEM), **spurious oscillations** (numerical instability: NS-FEM based on T3 linear interpolation), and **overly rigid solution** (T3 FEM). SNS-FEM is in between.
 
@@ -409,6 +411,7 @@ By default, computer folders are based on the LG laptop.
 - E:\Numerical simulation\COMSOL_NEWsimulations\Zhang2021_CMAT_2nd_example.mph (Published paper that uses COMSOL)
 - E:\Postdoc_PolyU\Coder_MEX\GEOKEYFEM_HM (Github repo)
 - C:\Users\zq112\OneDrive\REMOTE_SYNC\F\CSE583_Analytical and Numerical Methods in Geotechnical Engineering (Useful functions such as the *anisotropic elasticity* or *EVP* or *isotropic function*)
+- Overleaf CSE583 Notes about MCC
 
 #### On-going paper and revision
 - C:\Users\CEE\Desktop\kapp\main_test_validate_coal_Aug08.m + main_test_for_COMSOL.m (Remote computer)
