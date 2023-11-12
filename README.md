@@ -50,7 +50,7 @@ The new main file considers a simple 2D Mohr-Coulomb soil consolidation problem.
 The code cannot be perfect. It is highly likely that non-convergence will happen if you **change some parameters**, especially when you want to push the rigid block forward. One scenario that would **partially work** is WHEN there is no friction, the initial location of the rigid block is {(0.29, 1) m, (0.51, 1) m}, the total displacement (10 time steps) is (0.3, -0.1) m, mesh size is 0.025 m, Mohr-Coulomb model is adopted, and `epsp` is 1. The PEEQ profile **cannot** match the standard FEM result.
 
 
-However, if you consider friction such as making CFRI = 0.5, the original main code will not converge from the first time step. In that case, we have found a **new** scheme for updating stiffness matrix "by accident". This is given in the second main file with name `lucky`. We CANNOT guarantee that it will work for other examples.
+However, if you consider friction such as making CFRI = 0.5, the original main code will not converge from the first time step. In that case, we have "by accidently" found a **new** scheme for updating stiffness matrix. This is given in the second main file with name `lucky`. We CANNOT guarantee that it will work for other examples.
 
 
 The calculations of the equivalent plastic strain for D-P and M-C models are based on the deviatoric strain: **`depsp_d`**.
