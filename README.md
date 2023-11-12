@@ -17,7 +17,7 @@ The numerical simulation code of [Qi ZHANG](https://qizhang94.github.io/). This 
 ! which describes how to incorporate gas compressibility into hydro-mechanical coupling FEM.
 + The folder contains an assembly function, a constitutive model for transversely isotropic geomaterial,
 + one verification example, and one application example.
-@@ To run the example, you need to move files to the main folder. @@
+@@ To run the example, you need to move files to the main directory. @@
 ```
 
 ### Reflection
