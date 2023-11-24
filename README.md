@@ -441,7 +441,8 @@ By default, computer folders are based on the LG laptop.
 
 #### Group
 - C:\Users\zq112\Desktop\SNS-FEM-MCC-NEW3 (MCC + large deformation remesh)
-- C:\Users\zq112\OneDrive\REMOTE_SYNC\E\Postdoc_PolyU\Zeyu_WANG\FEMCON_T3T36 (Standard FEM)
+- C:\Users\zq112\OneDrive\REMOTE_SYNC\E\Postdoc_PolyU\Zeyu_WANG\FEMCON_T3T36 (Standard FEM, coded by Ze-Yu WANG)
+- C:\Users\zq112\OneDrive\REMOTE_SYNC\E\FEM_HM_T6T3 (Standard FEM, coded by Xianhan WU)
 
 #### Hydrate
 - C:\Users\zq112\Desktop\1D_hydrate\reproduce_Klar.m
