@@ -374,6 +374,26 @@ toc;
 
 % save ./gas_data/reference_result.mat COMSOL_ELASTIC p_at_corner;
 
+%% Compare with the case of incompressible fluid, pore pressure steady-state distribution (log)
+elemType = 'T3';
+poreliquid_ss = zeros(nnode,1);
+pe = 11/3; % MPa, same as the corner gas pressure at Step 40 (66.6 days)
+pw = 2; % MPa, BHP
+Re = sqrt(2); % meter
+Rw = 0.1; % meter, well radius
+for i = 1:nnode
+    r = sqrt(gcoord(i,1)^2 + gcoord(i,2)^2);
+    poreliquid_ss(i) = pw + (pe - pw)/log(Re/Rw)*log(r/Rw);
+end
+
+figure;
+plot_field(gcoord,ele_nods,elemType,poreliquid_ss);
+colormap(jet);
+c = colorbar; c.FontSize = 14; set(c,'TickLabelInterpreter','latex');
+set(gca,'TickLabelInterpreter','latex');
+set(gca,'FontSize',15);
+title('Incompressible fluid pressure $p$, MPa','Interpreter','latex','fontsize',15);
+
 %% user-defined mesh function
 function [hfun] = hfun8(test)
 %HFUN8 user-defined mesh-size function for DEMO-8.
