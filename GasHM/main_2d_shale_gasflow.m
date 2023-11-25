@@ -1,5 +1,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Modified integration force is changed to p and incremental u
+% Modified integration force is changed to "full" p and "incremental" u
+% Could consider adsorption!
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 restoredefaultpath;
@@ -377,7 +378,7 @@ toc;
 %% Compare with the case of incompressible fluid, pore pressure steady-state distribution (log)
 elemType = 'T3';
 poreliquid_ss = zeros(nnode,1);
-pe = 11/3; % MPa, same as the corner gas pressure at Step 40 (66.6 days)
+pe = cellUP{plotstep}(nnode*ndof+1); % MPa, same as the corner gas pressure at Step 40 (66.6 days)
 pw = 2; % MPa, BHP
 Re = sqrt(2); % meter
 Rw = 0.1; % meter, well radius
@@ -392,7 +393,7 @@ colormap(jet);
 c = colorbar; c.FontSize = 14; set(c,'TickLabelInterpreter','latex');
 set(gca,'TickLabelInterpreter','latex');
 set(gca,'FontSize',15);
-title('Incompressible fluid pressure $p$, MPa','Interpreter','latex','fontsize',15);
+title('Incompressible fluid steady-state $p$, MPa','Interpreter','latex','fontsize',15);
 
 %% user-defined mesh function
 function [hfun] = hfun8(test)
