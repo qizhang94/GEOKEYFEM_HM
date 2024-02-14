@@ -20,7 +20,7 @@ for ino = 1:nnode
     strain_ino_old = all_sd_B{ino}*old_solution(index_u);
     
     % Constitutive model
-    [stress_new(:, ino), SDV_new(:, ino), cto] = MohrCoulomb_UMAT(0, Props(ino,:), stress(:, ino), strain_ino_new - strain_ino_old, SDV(:, ino));
+    [stress_new(:, ino), SDV_new(:, ino), cto] = DP_UMAT(Props(ino,:), stress(:, ino), strain_ino_new - strain_ino_old, SDV(:, ino));
     
     % Take care of the "sign" (+ or -)
     residual_1(index_u) = residual_1(index_u) - transpose(all_sd_B{ino})*stress_new([1,2,4], ino)*area_nod(ino);
