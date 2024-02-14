@@ -420,19 +420,19 @@ By default, computer folders are based on the LG laptop.
 - Overleaf CSE583 Notes about MCC
 
 #### On-going paper and revision
-- C:\Users\CEE\Desktop\kapp\main_test_validate_coal_Aug08.m + main_test_for_COMSOL.m (Remote PolyU computer)
-- C:\Users\CEE\Desktop\kapp\New_simulations\Gas_transfer_PLA_ksdiff(surf_dif)_perm_bedding_BN=BP_add_newadsorption_PLASTIC.mph (Remote PolyU computer) (Permeability is isotropic, but elastic tensor isn't, theta = pi/6)
-- C:\Users\zq112\OneDrive\期刊论文修改发表2022\JMPS_or_IJNAG\Revision (Compare adsorbed mass functions)
-- C:\GEOKEYFEM_HM\gas_data (ASUS Gaming Laptop)
+- **C:\Users\CEE\Desktop**\kapp\main_test_validate_coal_Aug08.m + main_test_for_COMSOL.m (Remote PolyU computer)
+- **C:\Users\CEE\Desktop**\kapp\New_simulations\Gas_transfer_PLA_ksdiff(surf_dif)_perm_bedding_BN=BP_add_newadsorption_PLASTIC.mph (Remote PolyU computer) (Permeability is isotropic, but elastic tensor isn't, theta = pi/6)
+- √ C:\Users\zq112\OneDrive\期刊论文修改发表2022\JMPS_or_IJNAG\Revision (Compare adsorbed mass functions)
+- √ C:\GEOKEYFEM_HM\gas_data (ASUS Gaming Laptop)
 
 
 ================
 
-- C:\Users\zq112\OneDrive\REMOTE_SYNC\E\Postdoc_PolyU\Shale_gas_on_2022_not_published\Verification\New_case_anisotropy_3D.mph (For verification)
-- C:\Users\zq112\OneDrive\REMOTE_SYNC\E\Postdoc_PolyU\Shale_gas_on_2022_not_published\POROELASTIC_CONSTANTS.xlsx
-- C:\Users\zq112\OneDrive\REMOTE_SYNC\E\Postdoc_PolyU\Shale_gas_on_2022_not_published\Revised_results.ai
-- C:\Users\CEE\Desktop\3D_reservoir_COMSOL (Remote PolyU computer, see Excel subfolder)
-- Verification_3D1_ANISOTROPIC_horizontal_!!!!!!!!!!!!!!!!!!!!!_IMPORTANT.mph on the Desktop folder of the remote PolyU computer
+- √ C:\Users\zq112\OneDrive\REMOTE_SYNC\E\Postdoc_PolyU\Shale_gas_on_2022_not_published\Verification\New_case_anisotropy_3D.mph (For verification)
+- √ C:\Users\zq112\OneDrive\REMOTE_SYNC\E\Postdoc_PolyU\Shale_gas_on_2022_not_published\POROELASTIC_CONSTANTS.xlsx
+- √ C:\Users\zq112\OneDrive\REMOTE_SYNC\E\Postdoc_PolyU\Shale_gas_on_2022_not_published\Revised_results.ai
+- **C:\Users\CEE\Desktop**\3D_reservoir_COMSOL (Remote PolyU computer, see Excel subfolder)
+- **C:\Users\CEE\Desktop** Verification_3D1_ANISOTROPIC_horizontal_!!!!!!!!!!!!!!!!!!!!!_IMPORTANT.mph on the Desktop folder of the remote PolyU computer
 
 #### Finite strain solid mechanics
 - C:\Users\zq112\OneDrive\REMOTE_SYNC\Nonlinear FEA & C. Linder
