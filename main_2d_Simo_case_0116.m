@@ -276,6 +276,16 @@ set(gca,'Fontsize',FontSize,'FontName','Times new Roman');
 hold on
 sgtitle('Stress tensor components, MPa');
 
+vMises = sqrt((t1-t2).^2 + (t2-t4).^2 + (t1-t4).^2 ...
+    + 6*(t3).^2 + 6*(0).^2 + 6*(0).^2)/sqrt(2);
+
+% Plot Von-Mises stress with a colormap
+figure
+snscontour(node, element,fac, u_xp,u_yp,vMises','Von-Mises');
+title('S, Mises (MPa)');
+% clim([1.621E-2,1.436]);
+hold on;
+
 
 % Plot equivalent plastic strain with a colormap
 figure
