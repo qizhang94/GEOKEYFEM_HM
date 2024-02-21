@@ -27,7 +27,7 @@ A = 3*sqrt(2)*coh*cos(phi)/sqrt(9+3*(sin(phi))^2);
 B = 3*sqrt(2)*sin(phi)/sqrt(9+3*(sin(phi))^2);
 b = 3*sqrt(2)*sin(psi)/sqrt(9+3*(sin(psi))^2);
 
-stress_trial = STRESS0 + Ce*DSTRAIN0;   % Trial stress
+stress_trial = STRESS0 + Ce*DSTRAIN0;   % Trial stress 6*1 vector
 stress_trial_tensor = [stress_trial(1), stress_trial(4), stress_trial(5); stress_trial(4), stress_trial(2), stress_trial(6); stress_trial(5), stress_trial(6), stress_trial(3)];
 p_trial = 1/3*trace(stress_trial_tensor);
 stress_dev_trial = stress_trial_tensor - p_trial*eye(3);
@@ -50,6 +50,13 @@ else
     DDSDDE = Ce - (K*b*one_voigt + 2*mu*nhat)*...
         transpose(K*B*one_voigt + 2*mu*nhat)/(2*mu + B*K*b)...
         - 4*mu^2*delta_plastic/norm(stress_dev_trial, 'fro')*(I4 - 1/3*(one_voigt*one_voigt') - nhat*nhat');
+
+    if q_trial - sqrt(6)*mu*delta_plastic < 0
+        % Return mapping to the apex must be applied!
+        hsv = hsv0;
+        STRESS = A/B*one_voigt;
+        DDSDDE = zeros(6,6);
+    end
 end
 
 % See if DDSDDE is always invertible (it seems not!)
