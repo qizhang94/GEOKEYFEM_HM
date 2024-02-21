@@ -5,7 +5,7 @@
 % As a result, the computational effciency is excellent by using SNS-FEM (small strain), the
 % faiure surface is clear and qualitatively correct, the ultimate bearing
 % capacity is close to the reference one, depsite oscillations in the
-% contour plot of displacement and stress
+% contour plot of displacement and stress (more severe for stress)
 
 restoredefaultpath;
 clear; clearvars -global; clc; close all;
@@ -80,8 +80,7 @@ F_surcharge = 0; % MPa
 press_burden = 0; % MPa
 
 % Not used here, so set it to 0, t_crit is useless
-traction_f = @(x,t)(-(F_surcharge +...
-    press_burden*(x<=foot).*(t > 0)*(t/t_crit)*(t<=t_crit) + press_burden*(x<=foot).*(t>t_crit)));  % "-" means compression
+traction_f = @(x,t)([0;0]);  % "-" means compression
 
 Total_U = -0.0635;
 num_steps = 98;

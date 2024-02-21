@@ -27,8 +27,8 @@ for r=1:nny
   for c=1:nnx
     xi=xi_pts(c);
     % get interpolation basis at xi, eta
-    N=shape_func('Q4',[xi,eta]);
-    N=N(:,1);
+    [N,~,~]=get_shape_Q4(xi,eta);
+    %N=N(:,1);
     node((r-1)*nnx+c,:)=[x_pts*N,y_pts*N];
   end
 end

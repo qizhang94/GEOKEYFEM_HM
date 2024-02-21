@@ -17,26 +17,28 @@ if strcmp(boundary, 'horizontal')
             a = gcoord(b_natural(1), 1);
             b = gcoord(b_natural(2), 1);
             fun = @(x)((b-x)/(b-a).*traction_f(x, time));
-            residual_traction(ndof*b_natural(1)) = integral(fun, a, b);
+            residual_traction(ndof*b_natural(1)-1:ndof*b_natural(1)) = integral(fun, a, b,'ArrayValued',true);
     
         elseif i == length(b_natural)
             a = gcoord(b_natural(end-1), 1);
             b = gcoord(b_natural(end), 1);
             fun = @(x)((x-a)/(b-a).*traction_f(x, time));
-            residual_traction(ndof*b_natural(end)) = integral(fun, a, b);
+            residual_traction(ndof*b_natural(end)-1:ndof*b_natural(end)) = integral(fun, a, b, 'ArrayValued',true);
     
         else
             a = gcoord(b_natural(i-1), 1);
             b = gcoord(b_natural(i+1), 1);
             c = gcoord(b_natural(i), 1);
             fun = @(x)((x-a)/(c-a).*traction_f(x, time));
-            residual_traction(ndof*b_natural(i)) = residual_traction(ndof*b_natural(i)) + integral(fun, a, c);
+            residual_traction(ndof*b_natural(i)-1:ndof*b_natural(i)) = ...
+                residual_traction(ndof*b_natural(i)-1:ndof*b_natural(i)) + integral(fun, a, c, 'ArrayValued',true);
             fun = @(x)((b-x)/(b-c).*traction_f(x, time));
-            residual_traction(ndof*b_natural(i)) = residual_traction(ndof*b_natural(i)) + integral(fun, c, b);
+            residual_traction(ndof*b_natural(i)-1:ndof*b_natural(i)) = ...
+                residual_traction(ndof*b_natural(i)-1:ndof*b_natural(i)) + integral(fun, c, b, 'ArrayValued',true);
     
         end
     end
-else
+elseif strcmp(boundary, 'vertical')
     temp = [gcoord(b_natural, 2), b_natural]; % 2 columns
     temp = sortrows(temp);
     b_natural = temp(:, 2);
@@ -46,22 +48,24 @@ else
             a = gcoord(b_natural(1), 2);
             b = gcoord(b_natural(2), 2);
             fun = @(x)((b-x)/(b-a).*traction_f(x, time));
-            residual_traction(ndof*b_natural(1)-1) = integral(fun, a, b);
+            residual_traction(ndof*b_natural(1)-1:ndof*b_natural(1)) = integral(fun, a, b, 'ArrayValued',true);
     
         elseif i == length(b_natural)
             a = gcoord(b_natural(end-1), 2);
             b = gcoord(b_natural(end), 2);
             fun = @(x)((x-a)/(b-a).*traction_f(x, time));
-            residual_traction(ndof*b_natural(end)-1) = integral(fun, a, b);
+            residual_traction(ndof*b_natural(end)-1:ndof*b_natural(end)) = integral(fun, a, b, 'ArrayValued',true);
     
         else
             a = gcoord(b_natural(i-1), 2);
             b = gcoord(b_natural(i+1), 2);
             c = gcoord(b_natural(i), 2);
             fun = @(x)((x-a)/(c-a).*traction_f(x, time));
-            residual_traction(ndof*b_natural(i)-1) = residual_traction(ndof*b_natural(i)-1) + integral(fun, a, c);
+            residual_traction(ndof*b_natural(i)-1:ndof*b_natural(i)) = ...
+                residual_traction(ndof*b_natural(i)-1:ndof*b_natural(i)) + integral(fun, a, c, 'ArrayValued',true);
             fun = @(x)((b-x)/(b-c).*traction_f(x, time));
-            residual_traction(ndof*b_natural(i)-1) = residual_traction(ndof*b_natural(i)-1) + integral(fun, c, b);
+            residual_traction(ndof*b_natural(i)-1:ndof*b_natural(i)) = ...
+                residual_traction(ndof*b_natural(i)-1:ndof*b_natural(i)) + integral(fun, c, b, 'ArrayValued',true);
     
         end
     end
