@@ -54,7 +54,7 @@ STRESS = [SigC; 0; 0];
 % !-----------------------------------------------------------------------
 % !	Type of failure and Lode angle
 % !-----------------------------------------------------------------------
-[depsp_v, depsp_d]=strain_invariant(DelStrainPlas,nsigma);
+[depsp_v, depsp_d]=strain_invariant(DelStrainPlas,nsigma); % DelStrainPlas shear strain component NOT multiply by 2
 % hsv(1)  = region;	          % ! type of stress return
 % hsv(17) = hsv(17)+depsp_v;    % ! Equivalent plastic strain increment
 hsv = hsv+depsp_d;     % ! Total equivalent plastic strain
@@ -1406,7 +1406,7 @@ end
 %         !----------------------------------------------------------------------------------
 end %subroutine Invariants !--------------------------------------------------
 %%
-function [eps_v, eps_d]=strain_invariant(eps,nsigma)
+function [eps_v, eps_d]=strain_invariant(eps,nsigma) % eps's shear strain components are not multiplied by 2
 %
 if (nsigma==4)
     eps_v = eps(1) + eps(2) + eps(3);
