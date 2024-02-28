@@ -44,7 +44,6 @@ PlastPar(3) = (1.0+sin(psi))/(1.0-sin(psi));  %! Dilatation parameter
 % stain_els=D\delta_sig;
 % deps_plas=DSTRAN-stain_els;
 DelStrainPlas = (Dinv*(SigB-SigC));%! Plastic strain increment
-DPE_eq = sqrt(dot(DelStrainPlas,DelStrainPlas)*0.6666666666666667); %! Equivalent plastic strain increment
 % !-----------------------------------------------------------------------
 % !     Postconditioner for ABAQUS
 % !-----------------------------------------------------------------------
