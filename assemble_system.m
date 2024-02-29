@@ -36,7 +36,7 @@ residual_1 = residual_1 + residual_traction;
 
 factor = material_data_const.tauG;
 %K22_uns = -K_example(ndof*nnode+1:end, ndof*nnode+1:end)*(material_data_const.mobility)*delta_t; % Note of time increment, K22 is (semi-)negative definite
-K22_uns = Mass_mat*(material_data_const.mobility); % For nearly incompressibility u-p form
+K22_uns = -Mass_mat*(material_data_const.mobility); % For nearly incompressibility u-p form
 K22 = K22_uns - factor*S_PPP;    % Pressure stabilization, factor = \tau/(2*G)
 
 % For no-flow BC, the Eq. (35) of White(2008) paper simply vanishes (multiply delta_t)

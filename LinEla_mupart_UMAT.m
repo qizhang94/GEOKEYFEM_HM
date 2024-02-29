@@ -1,7 +1,7 @@
 function [STRESS, hsv, DDSDDE]=LinEla_mupart_UMAT(PROPS, STRESS0, DSTRAIN0, hsv0)
 
 DSTRAIN0 = [DSTRAIN0(1); DSTRAIN0(2); 0; DSTRAIN0(3); 0; 0]; % 6*1 VECTOR
-
+%DSTRAIN0 = DSTRAIN0 - sum(DSTRAIN0(1:3))/3*[1;1;1;0;0;0];
 
 E = PROPS(1); % Young's modulus
 nu = PROPS(2); % Poisson's ratio
