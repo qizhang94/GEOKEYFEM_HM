@@ -7,8 +7,8 @@ E = PROPS(1); % Young's modulus
 nu = PROPS(2); % Poisson's ratio
 
 G = E/2/(1+nu);
-
-Ce = G*diag([2,2,2,1,1,1]);
+one_voigt = [1,1,1,0,0,0]';
+Ce = 2*G*(diag([1,1,1,0.5,0.5,0.5])-0/3*(one_voigt*one_voigt')); % change between 0 and 1
 DDSDDE = Ce;
 
 STRESS = STRESS0 + Ce*DSTRAIN0;

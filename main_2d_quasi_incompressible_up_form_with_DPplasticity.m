@@ -126,9 +126,7 @@ phi = pi/12; psi = 0; coh = 0.1;
 Props=ones(nnode, 1)*[E, nu, phi, psi, coh];
 
 in_situ_stress = [0; 0; 0; 0; 0; 0]; % initial stress field, in general, the first three components could be negative
-[~, ~, cto_ela_t0] =...
-        LinEla_mupart_UMAT(Props(1,:), in_situ_stress, zeros(3,1), 0);
-data_const.Ce_t0 = cto_ela_t0; % only contains the "mu" part
+data_const.Ce_t0 = E/2/(1+nu)*diag([2,2,1]); % only contains the "mu" part
 
 
 old_solution = sparse((ndof + ndofp)*nnode, 1);
@@ -148,7 +146,7 @@ bcdof = unique(bcdof, 'stable');
 watch.dt = [0.5, 0.5];   % Two time steps
 watch.now = 0; % start
 bcval_incr = sparse(length(watch.dt), length(bcdof));
-epsp = 1;
+epsp = 0.1;
 
 traction_f = @(x,t)([0;1/16*t]); % Shear on the right +1[N]
 
