@@ -1,5 +1,5 @@
 function [node,element]=meshfooting(mesh_type, keypoint, meshsize, inner_edge)
-addpath(genpath('./dengwirda-mesh2d-ceb68eb'))
+addpath(genpath('./mesh2d_generator'))
 %addpath(genpath('./mesh2D_MLC'))
 %addpath('./meshingN')
 addpath('./plottingN')

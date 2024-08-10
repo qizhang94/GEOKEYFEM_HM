@@ -1,21 +1,28 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Modified integration force is changed to 增量 (u and p)            %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 restoredefaultpath;
 clear; clearvars -global; clc; close all;
 global ele_nods gcoord nnode nnel nel
 global ndof ndofp bcdof bcval_incr g_const
 format short;
 addpath('./SFEM_basic/');
-addpath('./MAIN_Examples/mesh_Sloan_case/');
-addpath('./plottingN')
 
 %% Geometry
-geoheight=8;  % meter
-geowidth=16;
-foot=1;
+geoheight=1;  % meter
+geowidth=1;
+foot=0.15;
 
-load node&elementT3_flexfoot_3_coarse.mat;
-
-gcoord = nodeT3_flexfoot;
-ele_nods = elementT3_flexfoot;
+keypoint = [0, 0;
+    geowidth, 0;
+    geowidth, geoheight;
+    0, geoheight;
+    foot, geoheight;
+    foot, 0;
+    0, 0];
+meshsize = [0.03, 0.03];
+[gcoord, ele_nods] = meshfooting('Non-uniform mesh', keypoint, meshsize, true); % This function will add more paths to the program
 
 % TRR = ST3Element(ele_nods, gcoord);
 % TRR.PlotElements;
@@ -29,13 +36,13 @@ ndofp = 1;
 nel = size(ele_nods, 1);
 g_const = 0;       % set it to zero could eliminate the effect of gravity
 
-% MPa (E = 2000 kPa)
-K = 20/12; nu = 0.3; tau = 2; rho_buo = 0; % buoyant density of the mixture
+% MPa (E = 100 kPa)
+K = 1/12; nu = 0.3; tau = 2; k_perm = 1e-14; mu_f = 1e-9; rho_buo = 0; % buoyant density of the mixture
 data_const.tauG = tau/(3*K*(1 - 2*nu)/1/(1+nu));   % Stabilization multiplier, already divided by 2G
-data_const.mobility = 1.1574E-10/(10/1000); % m^2/MPa/s
+data_const.mobility = k_perm/mu_f;
 
-cohesion = 0.01; phi = pi/9; psi = pi/180; % MPa
-Props=ones(nnode, 1)*[3*K*(1 - 2*nu), nu, phi, psi, cohesion]; % Note that porosity doesn't appear
+cohesion = 0.01; phi = pi/12; psi = pi/12;
+Props=ones(nnode, 1)*[3*K*(1 - 2*nu), nu, phi, psi, cohesion];
 
 in_situ_stress = [0; 0; 0; 0; 0; 0]; % initial stress field, in general, the first three components could be negative
 [~, ~, cto_ela_t0] =...
@@ -45,34 +52,32 @@ data_const.Ce_t0 = cto_ela_t0;
 
 old_solution = sparse((ndof + ndofp)*nnode, 1);
 new_solution = sparse((ndof + ndofp)*nnode, 1);
-residual_traction = sparse(ndof*nnode, 1);
+residual_traction = sparse(ndof*nnode, 1); % not used
 
 b_left=find(gcoord(:,1)==0);
 b_bottom=find(gcoord(:,2)==0);
 b_right=find(gcoord(:,1)==geowidth);
 b_top=find(gcoord(:,2)==geoheight);
 b_foot =intersect(find(gcoord(:,1)<=foot), b_top);
-b_drain =intersect(find(gcoord(:,1)>=foot), b_top);
 
 
 % Dirichlet BC
-bcdof = [ndof*b_left'-1, ndof*b_right'-1, ndof*b_bottom', ndof*b_bottom'-1, ndof*b_foot'-1, ndof*nnode + b_drain'];
+bcdof = [ndof*b_left'-1, ndof*b_right'-1, ndof*b_bottom', ndof*nnode + b_top'];
 bcdof = unique(bcdof, 'stable');
 
 % Neumann BC
-t_crit = 1647360; % seconds
+t_crit = 100; % seconds
 F_surcharge = 0; % MPa
-press_burden = 55/1000; % MPa
+press_burden = 0.05; % MPa
 
-traction_f = @(x,t)([0;-(F_surcharge +...
+traction_f = @(x,t)([0; -(F_surcharge +...
     press_burden*(x<=foot).*(t > 0)*(t/t_crit)*(t<=t_crit) + press_burden*(x<=foot).*(t>t_crit))]);  % "-" means compression
 
 
-
-watch.dt = t_crit/30*ones(1,30);   % time STEP INTERVAL
+watch.dt = [10*ones(1,10), 10*(1.5.^(1:1:10))];   % time STEP INTERVAL
 watch.now = 0; % start
 bcval_incr = sparse(length(watch.dt), length(bcdof));
-epsp = 0.17; % when psi = 0, epsp = 0.23
+epsp = 1;
 
 %% For contact model
 
@@ -100,8 +105,6 @@ stress = in_situ_stress*ones(1,nnode);  % Old
 stress_new = stress;
 SDV = zeros(1,nnode); % Solution-Dependent State Variables
 SDV_new = SDV;
-
-force_disp = [0, 0];
 
 for step = 1:length(watch.dt)
     watch.now = watch.now + watch.dt(step);
@@ -156,9 +159,6 @@ for step = 1:length(watch.dt)
     SDV = SDV_new;
     cellstress{step} = stress;
     cellUP{step} = old_solution;
-
-    % Force-disp data
-    force_disp = [force_disp; -new_solution(6)/foot, press_burden/cohesion*step/length(watch.dt)]; % z/B v.s. q/c, z @ (0,8)m
     
 end
 
@@ -262,7 +262,3 @@ snscontour(node, element,fac, u_xp,u_yp,p_nodal*1e3,'PP');
 title('Pore pressure, kPa')
 hold on
 
-force_disp = full(force_disp);
-figure;
-plot(force_disp(:,1)*100, force_disp(:,2)); grid on;
-xlim([0,16]); ylim([0,6]);

@@ -21,8 +21,8 @@ for ino = 1:nnode
     strain_ino_old = all_sd_B{ino}*old_solution(index_u);
     
     % Constitutive model **************************************************
-    %[stress_new(:, ino), SDV_new(:, ino), cto] = DP_UMAT(Props(ino,:), stress(:, ino), strain_ino_new - strain_ino_old, SDV(:, ino));
-    [stress_new(:, ino), SDV_new(:, ino), cto] = LinEla_mupart_UMAT(Props(ino,:), stress(:, ino), strain_ino_new - strain_ino_old, SDV(:, ino));
+    [stress_new(:, ino), SDV_new(:, ino), cto] = DP_UMAT(Props(ino,:), stress(:, ino), strain_ino_new - strain_ino_old, SDV(:, ino));
+    %[stress_new(:, ino), SDV_new(:, ino), cto] = LinEla_mupart_UMAT(Props(ino,:), stress(:, ino), strain_ino_new - strain_ino_old, SDV(:, ino));
 
     % Take care of the "sign" (+ or -)
     residual_1(index_u) = residual_1(index_u) - transpose(all_sd_B{ino})*stress_new([1,2,4], ino)*area_nod(ino);
@@ -35,8 +35,8 @@ residual_1 = residual_1 + (-K12)*new_solution(ndof*nnode+1:end);
 residual_1 = residual_1 + residual_traction;
 
 factor = material_data_const.tauG;
-%K22_uns = -K_example(ndof*nnode+1:end, ndof*nnode+1:end)*(material_data_const.mobility)*delta_t; % Note of time increment, K22 is (semi-)negative definite
-K22_uns = -Mass_mat*(material_data_const.mobility); % For nearly incompressibility u-p form
+K22_uns = -K_example(ndof*nnode+1:end, ndof*nnode+1:end)*(material_data_const.mobility)*delta_t; % Note of time increment, K22 is (semi-)negative definite
+% K22_uns = -Mass_mat*(material_data_const.mobility); % For nearly incompressibility u-p form
 K22 = K22_uns - factor*S_PPP;    % Pressure stabilization, factor = \tau/(2*G)
 
 % For no-flow BC, the Eq. (35) of White(2008) paper simply vanishes (multiply delta_t)

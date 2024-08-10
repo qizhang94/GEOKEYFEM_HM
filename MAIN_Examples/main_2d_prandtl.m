@@ -48,7 +48,7 @@ Props=ones(nnode, 1)*[3*K*(1 - 2*nu), nu, phi, psi, cohesion];
 
 in_situ_stress = [0; 0; 0; 0; 0; 0]; % initial stress field, in general, the first three components could be negative
 [~, ~, cto_ela_t0] =...
-        MohrCoulomb_UMAT(0, Props(1,:), in_situ_stress, zeros(3,1), 0);
+        LinearElastic_UMAT(Props(1,:), in_situ_stress, zeros(3,1), 0);
 data_const.Ce_t0 = cto_ela_t0;
 
 
