@@ -1,7 +1,5 @@
 # GEOKEYFEM_HM in 2D
-The numerical simulation code of [Qi ZHANG](https://qizhang94.github.io/). This work was supported by the **RGC Postdoctoral Fellowship Scheme** (RGC Ref. No. PDFS2223-5S04) and the **Start-up Fund for RAPs under the Strategic Hiring Scheme** (Grant No. P0043879).
-
-[Buckley–Leverett Displacement](https://gitee.com/qzhang94/fem-for-buckley-leverett-displacement.git)
+The numerical simulation code of [Qi ZHANG](https://www.fst.um.edu.mo/personal/qzhang/). This work was supported by the **RGC Postdoctoral Fellowship Scheme** (RGC Ref. No. PDFS2223-5S04) and the **Start-up Fund for RAPs under the Strategic Hiring Scheme** (Grant No. P0043879).
 
 ## Irregular updates
 [A benchmark example](https://github.com/qizhang94/GEOKEYFEM_HM/blob/main/MAIN_Examples/main_2d_prandtl.m) that concerns the bearing capacity of foundation soil was added on 02/08/2023 (mm/dd/yyyy). The NS-FEM result could match perfectly with the Prandtl solution. The surface of discontinuity was also qualitatively correct. **Change the UMAT file (to D-P) in the assemble function**.
